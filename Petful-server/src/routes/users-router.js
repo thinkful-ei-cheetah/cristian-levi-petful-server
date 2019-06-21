@@ -25,7 +25,7 @@ usersRouter
   .post(jsonBodyParser, (req, res, next) => {
     let newUser = xss(req.body.name)
     usersArr.push(newUser)
-    res.status(204).end()
+    res.status(201).json(newUser)
   })
 
 module.exports = usersRouter
