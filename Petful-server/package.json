@@ -8,12 +8,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "faker": "^4.1.0",
-    "nodemon": "^1.18.10"
+    "helmet": "^3.18.0",
+    "nodemon": "^1.18.10",
+    "xss": "^1.0.6"
   }
 }
