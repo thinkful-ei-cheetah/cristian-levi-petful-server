@@ -1,5 +1,6 @@
 const app = require('./app')
+const config = require('./config')
 
-app.listen(8080,()=>{
-  console.log('Serving on 8080');
+app.listen(config.PORT,()=>{
+  console.log(`Serving on ${config.PORT}`);
 });
