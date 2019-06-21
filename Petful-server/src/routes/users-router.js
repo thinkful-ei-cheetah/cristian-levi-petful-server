@@ -23,6 +23,9 @@ usersRouter
     res.status(200).json(usersArr)
   })
   .post(jsonBodyParser, (req, res, next) => {
+    if(!req.body.name){
+      res.status(400).json('Name not included in body')
+    }
     let newUser = xss(req.body.name)
     usersArr.push(newUser)
     res.status(201).json(newUser)

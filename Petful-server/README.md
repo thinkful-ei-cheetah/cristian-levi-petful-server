@@ -1,26 +1,45 @@
-# Express Boilerplate!
+# Pet-Deli
+Link to Live: [Pet-Deli api github](https://github.com/thinkful-ei-cheetah/cristian-levi-petful-server)
+Link to Client Repo: [Pet-Deli app github](https://github.com/thinkful-ei-cheetah/cristian-levi-petful-client)
+Link to API Repo: [Live]()
 
-This is a boilerplate project used for starting new projects!
+## Authors 
++ Cristian and Levi
 
-## How do set up?
+## Summary
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
++ This is a project that took ~6 hours to make that lets a user adopt cats and/or dogs and see other "users" do the same.
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
++ The api has 3 routes with 2 endpoints each
+  + /users
+    + Get:
+      + returns an array of all the current users(dummy names and names inputed by users)
+      + array is randomized for each git request
+    + Post:
+      + pushes an name into the users array
+        + {"name": <USERNAME HERE>}
 
-## Scripts
+  + /cats
+    + Get:
+      + returns an object, representing the current Cat available for adoption
+    + Delete:
+      + returns an object, representing the current Cat available for adoption
+      + dequeues the first Cat, then enqueues that Cat
+      
+  + /dogs
+    + Get:
+      + returns an object, representing the current Dog available for adoption
+    + Delete:
+      + returns an object, representing the current Dog available for adoption
+      + dequeues the first Dog, then enqueues that Dog
 
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests in watch mode `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+## Technology
++ This is an Express project, built using Nodejs
++ Node Modules used for this project:
+  + cors
+  + dotenv
+  + express
+  + faker
+  + helmet
+  + nodemon
+  + xss
