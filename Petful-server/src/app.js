@@ -1,12 +1,16 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
+const { CLIENT_ORIGIN } = require('./config')
 const helmet = require('helmet');
 const usersRouter = require('./routes/users-router')
 const catsRouter = require('./routes/cats-router')
 const dogsRouter = require('./routes/dogs-router')
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: CLIENT_ORIGIN
+}));
 app.use(express.json())
 app.use(helmet())
 
