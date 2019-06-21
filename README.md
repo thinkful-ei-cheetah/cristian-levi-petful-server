@@ -23,6 +23,7 @@ Link to API Repo: [Live]()
 + This is an Express project, built using Nodejs
 + Node Modules used for this project:
   + cors
+  + dotenv
   + express
   + faker
   + helmet
