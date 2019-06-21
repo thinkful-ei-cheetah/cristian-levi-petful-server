@@ -28,7 +28,7 @@ usersRouter
     }
     let newUser = xss(req.body.name)
     usersArr.push(newUser)
-    res.status(201).json(newUser)
+    return res.status(201).json(newUser)
   })
 
 module.exports = usersRouter
